@@ -5,13 +5,11 @@ members = [
     "crates/process", 
     "crates/index",
     "crates/ui",
-    "crates/server",
     "crates/versioning",
     "crates/orchestrator",
-    "demo",
-    "gui-demo",
 ]
 resolver = "2"
+default-members = ["crates/ui"]
 
 [workspace.package]
 version = "0.1.0"
@@ -47,10 +45,6 @@ notify = "6.1"
 # Time handling
 chrono = { version = "0.4", features = ["serde"] }
 uuid = { version = "1.6", features = ["v4", "serde"] }
-
-# Web framework
-actix-web = "4.4"
-actix-files = "0.6"
 
 # UI framework
 tauri = { version = "2.0", features = ["devtools"] }

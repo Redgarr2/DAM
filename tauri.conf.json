@@ -31,26 +31,6 @@
     "longDescription": "A powerful offline digital asset management system for all file types",
     "icon": [
       "icons/icon.png"
-    ],
-    "targets": ["nsis"],
-    "resources": [],
-    "externalBin": [],
-    "windows": {
-      "certificateThumbprint": null,
-      "digestAlgorithm": "sha256",
-      "timestampUrl": "",
-      "wix": {
-        "language": "en-US"
-      },
-      "nsis": {
-        "oneClick": false,
-        "perMachine": false,
-        "allowToChangeInstallationDirectory": true,
-        "deleteAppDataOnUninstall": false,
-        "displayLanguageSelector": false,
-        "createDesktopShortcut": true,
-        "createStartMenuShortcut": true
-      }
-    }
+    ]
   }
 }
