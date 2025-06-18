@@ -1,0 +1,12 @@
+[package]
+name = "versioning"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+schema = { path = "../schema" }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+# git2 = { workspace = true }  # temporarily disabled due to zstd conflicts

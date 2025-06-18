@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.tauri.app/config/2.0.0",
+  "productName": "DAM - Digital Asset Manager",
+  "version": "0.1.0",
+  "identifier": "com.dam.asset-manager",
+  "build": {
+    "frontendDist": "dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "DAM - Digital Asset Manager",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 800,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "category": "Productivity",
+    "copyright": "",
+    "shortDescription": "Digital Asset Manager",
+    "longDescription": "A powerful offline digital asset management system",
+    "icon": [
+      "src-tauri/icons/icon.png"
+    ]
+  }
+}

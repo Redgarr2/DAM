@@ -1,0 +1,4 @@
+id,name,type,size
+1,test_image.jpg,image,2048
+2,test_video.mp4,video,15360
+3,test_model.blend,3d,8192

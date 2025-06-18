@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAM - Digital Asset Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">DAM - Digital Asset Manager</h1>
+                <div class="header-actions">
+                    <button id="import-btn" class="btn btn-primary">Import Files</button>
+                    <button id="settings-btn" class="btn btn-secondary">Settings</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="library-info">
+                    <h3>Library Stats</h3>
+                    <div id="library-stats">
+                        <div class="stat">
+                            <span class="stat-label">Total Assets:</span>
+                            <span class="stat-value" id="total-assets">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">AI Processed:</span>
+                            <span class="stat-value" id="ai-processed">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="scan-library-btn" class="btn btn-primary full-width">Scan Library</button>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search assets..." class="search-input">
+                    <button id="search-btn" class="btn btn-primary">Search</button>
+                </div>
+
+                <!-- Results Area -->
+                <div class="results-container">
+                    <div id="loading" class="loading hidden">
+                        <div class="spinner"></div>
+                        <p>Processing...</p>
+                    </div>
+
+                    <div id="results-grid" class="results-grid">
+                        <!-- Search results will be populated here -->
+                    </div>
+
+                    <div id="empty-state" class="empty-state">
+                        <h3>Welcome to Digital Asset Manager</h3>
+                        <p>Start by importing files or scanning a library directory.</p>
+                        <button id="import-first-btn" class="btn btn-primary">Import Your First Files</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Status Bar -->
+        <footer class="status-bar">
+            <div id="status-text">Ready</div>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button id="close-settings" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label for="ai-enabled">Enable AI Processing</label>
+                    <input type="checkbox" id="ai-enabled" checked>
+                </div>
+                <div class="setting-group">
+                    <label for="ai-tier">AI Quality Tier</label>
+                    <select id="ai-tier">
+                        <option value="Low">Low (Fast, 2-4GB VRAM)</option>
+                        <option value="Medium" selected>Medium (Balanced, 8-12GB VRAM)</option>
+                        <option value="High">High (Best Quality, 16+ GB VRAM)</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="auto-tag">Auto-tag images</label>
+                    <input type="checkbox" id="auto-tag" checked>
+                </div>
+                <div class="setting-group">
+                    <label for="auto-transcribe">Auto-transcribe audio/video</label>
+                    <input type="checkbox" id="auto-transcribe" checked>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-settings" class="btn btn-primary">Save Settings</button>
+                <button id="cancel-settings" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

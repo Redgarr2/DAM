@@ -1,0 +1,94 @@
+[workspace]
+members = [
+    "crates/schema",
+    "crates/ingest",
+    "crates/process", 
+    "crates/index",
+    "crates/ui",
+    "crates/server",
+    "crates/versioning",
+    "crates/orchestrator",
+    "demo",
+    "gui-demo",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+authors = ["DAM Project"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/user/dam"
+homepage = "https://github.com/user/dam"
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+futures = "0.3"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# File system
+walkdir = "2.4"
+notify = "6.1"
+
+# Time handling
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1.6", features = ["v4", "serde"] }
+
+# Web framework
+actix-web = "4.4"
+actix-files = "0.6"
+
+# UI framework
+tauri = { version = "2.0", features = ["devtools"] }
+
+# Search engine - temporarily disabled due to zstd conflicts
+# tantivy = "0.21"
+
+# Version control - temporarily disabled due to zstd conflicts  
+# git2 = "0.18"
+
+# Image processing
+image = { version = "0.24", features = ["png", "jpeg", "tiff", "webp"] }
+psd = "0.3"
+
+# 3D file formats
+gltf = "1.4"
+
+# Audio/Video
+symphonia = { version = "0.5", features = ["all"] }
+
+# ML framework  
+candle-core = "0.9"
+candle-nn = "0.9"
+candle-transformers = "0.9"
+
+# Database
+sled = "0.34"
+
+# Crypto
+sha2 = "0.10"
+blake3 = "1.5"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 0
+debug = true

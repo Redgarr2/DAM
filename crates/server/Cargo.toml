@@ -1,0 +1,13 @@
+[package]
+name = "server"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+schema = { path = "../schema" }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+actix-web = { workspace = true }
+actix-files = { workspace = true }

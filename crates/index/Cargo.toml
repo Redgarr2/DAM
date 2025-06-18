@@ -1,0 +1,18 @@
+[package]
+name = "index"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+schema = { path = "../schema" }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+# tantivy = { workspace = true }  # temporarily disabled due to zstd conflicts
+sled = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true, features = ["v4", "serde"] }
+chrono = { workspace = true, features = ["serde"] }
+thiserror = { workspace = true }

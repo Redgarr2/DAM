@@ -1,0 +1,11 @@
+[package]
+name = "orchestrator"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+schema = { path = "../schema" }
+tokio = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }

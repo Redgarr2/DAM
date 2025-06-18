@@ -1,0 +1,45 @@
+[package]
+name = "process"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+# Shared schema
+schema = { path = "../schema" }
+
+# Async runtime
+tokio = { workspace = true }
+futures = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Time
+chrono = { workspace = true }
+uuid = { workspace = true }
+
+# ML framework
+candle-core = { workspace = true }
+candle-nn = { workspace = true }
+candle-transformers = { workspace = true }
+
+# Image processing
+image = { workspace = true }
+
+# Audio processing
+symphonia = { workspace = true }
+
+# FFI bindings
+libc = "0.2"
+
+[build-dependencies]
+cc = "1.0"
